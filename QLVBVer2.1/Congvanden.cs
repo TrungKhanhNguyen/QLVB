@@ -45,6 +45,7 @@ namespace QLVBVer2._1
         }
         private void Congvanden_Load(object sender, EventArgs e)
         {
+            //Add new comment
             string filePath = ConfigurationManager.AppSettings["Role"];
             if (filePath == "1")
             {
