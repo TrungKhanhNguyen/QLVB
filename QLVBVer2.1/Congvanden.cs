@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Diagnostics;
 using System.Drawing;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -38,7 +36,7 @@ namespace QLVBVer2._1
         {
             InitializeComponent();
             dataGridView1.AutoGenerateColumns = false;
-            
+
             isColor = Convert.ToBoolean(System.Configuration.ConfigurationManager.AppSettings["cbFlashColor"]);
             outdate = Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["date"]);
             ipmain = System.Configuration.ConfigurationManager.AppSettings["IPMain"].ToString();
@@ -77,8 +75,8 @@ namespace QLVBVer2._1
 
             listCateSearch = db.CategoryVBs.ToList();
 
-            var itemSearch = new CategoryVB { Id = 0,NameCate="Tất cả" };
-            listCateSearch.Insert(0,itemSearch);
+            var itemSearch = new CategoryVB { Id = 0, NameCate = "Tất cả" };
+            listCateSearch.Insert(0, itemSearch);
 
             comboSearchCategory.DisplayMember = "NameCate";
             comboSearchCategory.ValueMember = "Id";
@@ -86,14 +84,14 @@ namespace QLVBVer2._1
 
 
             Application.EnableVisualStyles();
-            txtSoCV.ShortcutsEnabled = txtAnhscan.ShortcutsEnabled 
-                = txtGhichu.ShortcutsEnabled= txtNguoikyCV.ShortcutsEnabled 
-                = txtNoidung.ShortcutsEnabled = txtNoiguiCV.ShortcutsEnabled 
+            txtSoCV.ShortcutsEnabled = txtAnhscan.ShortcutsEnabled
+                = txtGhichu.ShortcutsEnabled = txtNguoikyCV.ShortcutsEnabled
+                = txtNoidung.ShortcutsEnabled = txtNoiguiCV.ShortcutsEnabled
                 = txtYkienchidao.ShortcutsEnabled = true;
             btnNext.Enabled = btnPrev.Enabled = false;
 
-            
-   
+
+
         }
 
         private void ReloadData()
@@ -118,7 +116,7 @@ namespace QLVBVer2._1
 
             var today = DateTime.Today.Date;
             var currentDay = DateTime.Today.AddDays(outdate).Date;
-            var listHH = db.tblCVdens.Where(m => m.Daxuly == false && m.ngayhethan != null && ((m.ngayhethan >= today && m.ngayhethan.Value <= currentDay) || (m.ngayhethan < today ) )).ToList();
+            var listHH = db.tblCVdens.Where(m => m.Daxuly == false && m.ngayhethan != null && ((m.ngayhethan >= today && m.ngayhethan.Value <= currentDay) || (m.ngayhethan < today))).ToList();
             if (listHH != null && listHH.Count > 0)
             {
                 isHH = true;
@@ -140,7 +138,8 @@ namespace QLVBVer2._1
                 {
                     MessageBox.Show(this, "Số công văn này đã tồn tại", "lỗi");
                 }
-                else{
+                else
+                {
                     try
                     {
                         var cateId = cbCategory.SelectedValue;
@@ -370,19 +369,19 @@ namespace QLVBVer2._1
                 CurrentPageIndex = CurrentPageIndex - 1;
                 PaginateClick(CurrentPageIndex);
             }
-            
+
         }
         private void btnNext_Click(object sender, EventArgs e)
         {
             if (CurrentPageIndex < TotalPageIndex)
             {
-                CurrentPageIndex +=1;
+                CurrentPageIndex += 1;
                 PaginateClick(CurrentPageIndex);
             }
         }
         private void PaginateClick(int current)
         {
-            var tempCV = listParseObject.Skip((current-1) * ItemPerPage).Take(ItemPerPage).ToList();
+            var tempCV = listParseObject.Skip((current - 1) * ItemPerPage).Take(ItemPerPage).ToList();
             if (current == TotalPageIndex)
             {
                 btnNext.Enabled = false;
@@ -431,9 +430,9 @@ namespace QLVBVer2._1
                 btnNext.Enabled = true;
             lblCurrentPage.Text = CurrentPageIndex.ToString();
             lblTotalPage.Text = TotalPageIndex.ToString();
-            
+
         }
-       
+
 
         private void btnReset_Click(object sender, EventArgs e)
         {
@@ -498,7 +497,7 @@ namespace QLVBVer2._1
             {
                 MessageBox.Show(this, ex.Message, "Lỗi!!!");
             }
-            
+
         }
         private void cbValidate_CheckedChanged(object sender, EventArgs e)
         {
@@ -537,7 +536,7 @@ namespace QLVBVer2._1
 
         private void lblNotify_DoubleClick(object sender, EventArgs e)
         {
-            
+
         }
 
 
@@ -557,11 +556,11 @@ namespace QLVBVer2._1
                     switch (searchId)
                     {
                         case "2":
-                            if(listCV !=null && listCV.Count >0)
+                            if (listCV != null && listCV.Count > 0)
                                 listCV = listCV.Where(m => (m.ngaythang.Value.Date >= dpSearchFrDate.Value.Date) && (m.ngaythang <= dpSearchToDate.Value.Date)).ToList();
                             break;
                         case "3":
-                            if(listCV !=null && listCV.Count > 0)
+                            if (listCV != null && listCV.Count > 0)
                                 listCV = listCV.Where(m => m.ngaythang.Value.Date == dpSearchFrDate.Value.Date).ToList();
                             break;
                     }
@@ -576,14 +575,14 @@ namespace QLVBVer2._1
 
                     if (listCV != null && listCV.Count > 0)
                     {
-                        if(searchCategoryValue!="0")
+                        if (searchCategoryValue != "0")
                             listCV = listCV.Where(m => m.CategoryId == searchCategoryValue).ToList();
                     }
-                        
+
                     switch (searchId)
                     {
                         case "2":
-                            if(listCV!=null && listCV.Count > 0)
+                            if (listCV != null && listCV.Count > 0)
                                 listCV = listCV.Where(m => m.ngaythang.Value.Date >= dpSearchFrDate.Value && m.ngaythang.Value.Date <= dpSearchToDate.Value).ToList();
                             break;
                         case "3":
@@ -614,7 +613,7 @@ namespace QLVBVer2._1
                         }
                     }
                 }
-                
+
                 if (!String.IsNullOrEmpty(txtSearchByCode.Text))
                 {
                     if (listCV != null && listCV.Count > 0)
@@ -665,7 +664,7 @@ namespace QLVBVer2._1
 
         private void Congvanden_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.Alt == true && e.KeyCode == Keys.D)
+            if (e.Alt == true && e.KeyCode == Keys.D)
             {
                 btnOpenFolder.PerformClick();
             }
@@ -673,7 +672,7 @@ namespace QLVBVer2._1
             {
                 btnOpenFile.PerformClick();
             }
-            if(e.Alt == true && e.KeyCode == Keys.V)
+            if (e.Alt == true && e.KeyCode == Keys.V)
             {
                 btnSeeImage.PerformClick();
             }
@@ -681,10 +680,10 @@ namespace QLVBVer2._1
             {
                 txtSearchContent.Focus();
             }
-            if(e.Alt == true && e.KeyCode == Keys.E )
+            if (e.Alt == true && e.KeyCode == Keys.E)
             {
                 dataGridView1.Focus();
-                if(dataGridView1.Rows.Count > 0)
+                if (dataGridView1.Rows.Count > 0)
                 {
                     dataGridView1.Rows[0].Selected = true;
                 }
@@ -695,7 +694,7 @@ namespace QLVBVer2._1
             }
         }
 
-        
+
 
         //private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
         //{
