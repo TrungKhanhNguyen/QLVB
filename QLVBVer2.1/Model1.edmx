@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QLVBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="QLVBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CategoryVB">
           <Key>
             <PropertyRef Name="Id" />
@@ -68,60 +68,6 @@ warning 6013: The table/view 'QLVB.dbo.NhanVien' does not have a primary key def
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="RoleId" Type="int" />
         </EntityType>
-        <Function Name="danhsachCVden" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="danhsachCVdi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="DELETECVden" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="socongvan" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="DELETECVdi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="socongvan" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="THEMCVden" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ngaythang" Type="datetime" Mode="In" />
-          <Parameter Name="socongvan" Type="nvarchar" Mode="In" />
-          <Parameter Name="noidung" Type="nvarchar(max)" Mode="In" />
-          <Parameter Name="noigui" Type="nvarchar" Mode="In" />
-          <Parameter Name="nguoiky" Type="nvarchar" Mode="In" />
-          <Parameter Name="ngaychidao" Type="datetime" Mode="In" />
-          <Parameter Name="ykienchidao" Type="nvarchar(max)" Mode="In" />
-          <Parameter Name="ghichu" Type="nvarchar(max)" Mode="In" />
-          <Parameter Name="anhscan" Type="nvarchar(max)" Mode="In" />
-        </Function>
-        <Function Name="THEMCVdi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="socongvan" Type="nvarchar" Mode="In" />
-          <Parameter Name="ngaygui" Type="datetime" Mode="In" />
-          <Parameter Name="noidung" Type="nvarchar(max)" Mode="In" />
-          <Parameter Name="noinhan" Type="nvarchar" Mode="In" />
-          <Parameter Name="ghichu" Type="nvarchar(max)" Mode="In" />
-          <Parameter Name="anhscan" Type="nvarchar(max)" Mode="In" />
-        </Function>
-        <Function Name="timkiemCVden" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="searchText" Type="nvarchar" Mode="In" />
-          <Parameter Name="searchType" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="timkiemCVdi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="searchText" Type="nvarchar" Mode="In" />
-          <Parameter Name="searchType" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="UPDATECVden" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ngaythang" Type="datetime" Mode="In" />
-          <Parameter Name="socongvan" Type="nvarchar" Mode="In" />
-          <Parameter Name="noidung" Type="nvarchar(max)" Mode="In" />
-          <Parameter Name="noigui" Type="nvarchar" Mode="In" />
-          <Parameter Name="nguoiky" Type="nvarchar" Mode="In" />
-          <Parameter Name="ngaychidao" Type="datetime" Mode="In" />
-          <Parameter Name="ykienchidao" Type="nvarchar(max)" Mode="In" />
-          <Parameter Name="ghichu" Type="nvarchar(max)" Mode="In" />
-          <Parameter Name="anhscan" Type="nvarchar(max)" Mode="In" />
-        </Function>
-        <Function Name="UPDATECVdi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ngaygui" Type="datetime" Mode="In" />
-          <Parameter Name="socongvan" Type="nvarchar" Mode="In" />
-          <Parameter Name="noidung" Type="nvarchar(max)" Mode="In" />
-          <Parameter Name="noinhan" Type="nvarchar" Mode="In" />
-          <Parameter Name="ghichu" Type="nvarchar(max)" Mode="In" />
-          <Parameter Name="anhscan" Type="nvarchar(max)" Mode="In" />
-        </Function>
         <EntityContainer Name="QLVBModelStoreContainer">
           <EntitySet Name="CategoryVB" EntityType="Self.CategoryVB" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblCVden" EntityType="Self.tblCVden" Schema="dbo" store:Type="Tables" />
@@ -186,111 +132,7 @@ warning 6013: The table/view 'QLVB.dbo.NhanVien' does not have a primary key def
           <EntitySet Name="tblCVdens" EntityType="Self.tblCVden" />
           <EntitySet Name="tblCVdis" EntityType="Self.tblCVdi" />
           <EntitySet Name="tblLogins" EntityType="Self.tblLogin" />
-          <FunctionImport Name="danhsachCVden" ReturnType="Collection(QLVBModel.danhsachCVden_Result)" />
-          <FunctionImport Name="danhsachCVdi" ReturnType="Collection(QLVBModel.danhsachCVdi_Result)" />
-          <FunctionImport Name="DELETECVden">
-            <Parameter Name="socongvan" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="DELETECVdi">
-            <Parameter Name="socongvan" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="THEMCVden">
-            <Parameter Name="ngaythang" Mode="In" Type="DateTime" />
-            <Parameter Name="socongvan" Mode="In" Type="String" />
-            <Parameter Name="noidung" Mode="In" Type="String" />
-            <Parameter Name="noigui" Mode="In" Type="String" />
-            <Parameter Name="nguoiky" Mode="In" Type="String" />
-            <Parameter Name="ngaychidao" Mode="In" Type="DateTime" />
-            <Parameter Name="ykienchidao" Mode="In" Type="String" />
-            <Parameter Name="ghichu" Mode="In" Type="String" />
-            <Parameter Name="anhscan" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="THEMCVdi">
-            <Parameter Name="socongvan" Mode="In" Type="String" />
-            <Parameter Name="ngaygui" Mode="In" Type="DateTime" />
-            <Parameter Name="noidung" Mode="In" Type="String" />
-            <Parameter Name="noinhan" Mode="In" Type="String" />
-            <Parameter Name="ghichu" Mode="In" Type="String" />
-            <Parameter Name="anhscan" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="timkiemCVden" ReturnType="Collection(QLVBModel.timkiemCVden_Result)">
-            <Parameter Name="searchText" Mode="In" Type="String" />
-            <Parameter Name="searchType" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="timkiemCVdi" ReturnType="Collection(QLVBModel.timkiemCVdi_Result)">
-            <Parameter Name="searchText" Mode="In" Type="String" />
-            <Parameter Name="searchType" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="UPDATECVden">
-            <Parameter Name="ngaythang" Mode="In" Type="DateTime" />
-            <Parameter Name="socongvan" Mode="In" Type="String" />
-            <Parameter Name="noidung" Mode="In" Type="String" />
-            <Parameter Name="noigui" Mode="In" Type="String" />
-            <Parameter Name="nguoiky" Mode="In" Type="String" />
-            <Parameter Name="ngaychidao" Mode="In" Type="DateTime" />
-            <Parameter Name="ykienchidao" Mode="In" Type="String" />
-            <Parameter Name="ghichu" Mode="In" Type="String" />
-            <Parameter Name="anhscan" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="UPDATECVdi">
-            <Parameter Name="ngaygui" Mode="In" Type="DateTime" />
-            <Parameter Name="socongvan" Mode="In" Type="String" />
-            <Parameter Name="noidung" Mode="In" Type="String" />
-            <Parameter Name="noinhan" Mode="In" Type="String" />
-            <Parameter Name="ghichu" Mode="In" Type="String" />
-            <Parameter Name="anhscan" Mode="In" Type="String" />
-          </FunctionImport>
         </EntityContainer>
-        <ComplexType Name="danhsachCVden_Result">
-          <Property Type="Int32" Name="STT" Nullable="false" />
-          <Property Type="DateTime" Name="ngaythang" Nullable="true" Precision="23" />
-          <Property Type="String" Name="socongvan" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="noidung" Nullable="true" />
-          <Property Type="String" Name="noigui" Nullable="true" MaxLength="500" />
-          <Property Type="String" Name="nguoiky" Nullable="true" MaxLength="50" />
-          <Property Type="DateTime" Name="ngaychidao" Nullable="true" Precision="23" />
-          <Property Type="String" Name="ykienchidao" Nullable="true" />
-          <Property Type="String" Name="ghichu" Nullable="true" />
-          <Property Type="String" Name="anhscan" Nullable="true" />
-          <Property Type="DateTime" Name="ngayhethan" Nullable="true" Precision="23" />
-          <Property Type="Boolean" Name="Daxuly" Nullable="true" />
-          <Property Type="String" Name="nguoixuly" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="CategoryId" Nullable="true" MaxLength="50" />
-        </ComplexType>
-        <ComplexType Name="danhsachCVdi_Result">
-          <Property Type="Int32" Name="STT" Nullable="false" />
-          <Property Type="String" Name="socongvan" Nullable="false" MaxLength="50" />
-          <Property Type="DateTime" Name="ngaygui" Nullable="true" Precision="23" />
-          <Property Type="String" Name="noidung" Nullable="true" />
-          <Property Type="String" Name="noinhan" Nullable="true" MaxLength="500" />
-          <Property Type="String" Name="ghichu" Nullable="true" />
-          <Property Type="String" Name="anhscan" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="timkiemCVden_Result">
-          <Property Type="Int32" Name="STT" Nullable="false" />
-          <Property Type="DateTime" Name="ngaythang" Nullable="true" Precision="23" />
-          <Property Type="String" Name="socongvan" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="noidung" Nullable="true" />
-          <Property Type="String" Name="noigui" Nullable="true" MaxLength="500" />
-          <Property Type="String" Name="nguoiky" Nullable="true" MaxLength="50" />
-          <Property Type="DateTime" Name="ngaychidao" Nullable="true" Precision="23" />
-          <Property Type="String" Name="ykienchidao" Nullable="true" />
-          <Property Type="String" Name="ghichu" Nullable="true" />
-          <Property Type="String" Name="anhscan" Nullable="true" />
-          <Property Type="DateTime" Name="ngayhethan" Nullable="true" Precision="23" />
-          <Property Type="Boolean" Name="Daxuly" Nullable="true" />
-          <Property Type="String" Name="nguoixuly" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="CategoryId" Nullable="true" MaxLength="50" />
-        </ComplexType>
-        <ComplexType Name="timkiemCVdi_Result">
-          <Property Type="Int32" Name="STT" Nullable="false" />
-          <Property Type="String" Name="socongvan" Nullable="false" MaxLength="50" />
-          <Property Type="DateTime" Name="ngaygui" Nullable="true" Precision="23" />
-          <Property Type="String" Name="noidung" Nullable="true" />
-          <Property Type="String" Name="noinhan" Nullable="true" MaxLength="500" />
-          <Property Type="String" Name="ghichu" Nullable="true" />
-          <Property Type="String" Name="anhscan" Nullable="true" />
-        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -349,78 +191,6 @@ warning 6013: The table/view 'QLVB.dbo.NhanVien' does not have a primary key def
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="danhsachCVden" FunctionName="QLVBModel.Store.danhsachCVden">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="QLVBModel.danhsachCVden_Result">
-                <ScalarProperty Name="STT" ColumnName="STT" />
-                <ScalarProperty Name="ngaythang" ColumnName="ngaythang" />
-                <ScalarProperty Name="socongvan" ColumnName="socongvan" />
-                <ScalarProperty Name="noidung" ColumnName="noidung" />
-                <ScalarProperty Name="noigui" ColumnName="noigui" />
-                <ScalarProperty Name="nguoiky" ColumnName="nguoiky" />
-                <ScalarProperty Name="ngaychidao" ColumnName="ngaychidao" />
-                <ScalarProperty Name="ykienchidao" ColumnName="ykienchidao" />
-                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
-                <ScalarProperty Name="anhscan" ColumnName="anhscan" />
-                <ScalarProperty Name="ngayhethan" ColumnName="ngayhethan" />
-                <ScalarProperty Name="Daxuly" ColumnName="Daxuly" />
-                <ScalarProperty Name="nguoixuly" ColumnName="nguoixuly" />
-                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="danhsachCVdi" FunctionName="QLVBModel.Store.danhsachCVdi">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="QLVBModel.danhsachCVdi_Result">
-                <ScalarProperty Name="STT" ColumnName="STT" />
-                <ScalarProperty Name="socongvan" ColumnName="socongvan" />
-                <ScalarProperty Name="ngaygui" ColumnName="ngaygui" />
-                <ScalarProperty Name="noidung" ColumnName="noidung" />
-                <ScalarProperty Name="noinhan" ColumnName="noinhan" />
-                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
-                <ScalarProperty Name="anhscan" ColumnName="anhscan" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="DELETECVden" FunctionName="QLVBModel.Store.DELETECVden" />
-          <FunctionImportMapping FunctionImportName="DELETECVdi" FunctionName="QLVBModel.Store.DELETECVdi" />
-          <FunctionImportMapping FunctionImportName="THEMCVden" FunctionName="QLVBModel.Store.THEMCVden" />
-          <FunctionImportMapping FunctionImportName="THEMCVdi" FunctionName="QLVBModel.Store.THEMCVdi" />
-          <FunctionImportMapping FunctionImportName="timkiemCVden" FunctionName="QLVBModel.Store.timkiemCVden">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="QLVBModel.timkiemCVden_Result">
-                <ScalarProperty Name="STT" ColumnName="STT" />
-                <ScalarProperty Name="ngaythang" ColumnName="ngaythang" />
-                <ScalarProperty Name="socongvan" ColumnName="socongvan" />
-                <ScalarProperty Name="noidung" ColumnName="noidung" />
-                <ScalarProperty Name="noigui" ColumnName="noigui" />
-                <ScalarProperty Name="nguoiky" ColumnName="nguoiky" />
-                <ScalarProperty Name="ngaychidao" ColumnName="ngaychidao" />
-                <ScalarProperty Name="ykienchidao" ColumnName="ykienchidao" />
-                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
-                <ScalarProperty Name="anhscan" ColumnName="anhscan" />
-                <ScalarProperty Name="ngayhethan" ColumnName="ngayhethan" />
-                <ScalarProperty Name="Daxuly" ColumnName="Daxuly" />
-                <ScalarProperty Name="nguoixuly" ColumnName="nguoixuly" />
-                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="timkiemCVdi" FunctionName="QLVBModel.Store.timkiemCVdi">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="QLVBModel.timkiemCVdi_Result">
-                <ScalarProperty Name="STT" ColumnName="STT" />
-                <ScalarProperty Name="socongvan" ColumnName="socongvan" />
-                <ScalarProperty Name="ngaygui" ColumnName="ngaygui" />
-                <ScalarProperty Name="noidung" ColumnName="noidung" />
-                <ScalarProperty Name="noinhan" ColumnName="noinhan" />
-                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
-                <ScalarProperty Name="anhscan" ColumnName="anhscan" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="UPDATECVden" FunctionName="QLVBModel.Store.UPDATECVden" />
-          <FunctionImportMapping FunctionImportName="UPDATECVdi" FunctionName="QLVBModel.Store.UPDATECVdi" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

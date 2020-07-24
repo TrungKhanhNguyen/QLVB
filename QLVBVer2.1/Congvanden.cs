@@ -143,8 +143,8 @@ namespace QLVBVer2._1
                     try
                     {
                         var cateId = cbCategory.SelectedValue;
-                        var path = txtAnhscan.Text.Replace(@"T:", "");
-                        var folderPath = @"\\SERVER-NC\doi 1$\DU LIEU SCAN" + path;
+                        var path = txtAnhscan.Text;
+                        var folderPath = path;   
                         var newCV = new tblCVden
                         {
                             ngaythang = dpNgaygui.Value,
@@ -157,11 +157,14 @@ namespace QLVBVer2._1
                             ghichu = txtGhichu.Text,
                             anhscan = folderPath,
                             Daxuly = cbIsDone.Checked,
-                            CategoryId = cateId.ToString()
                         };
                         if (cbValidate.Checked)
                             newCV.ngayhethan = dpValidate.Value;
                         newCV.nguoixuly = txtNguoixuly.Text;
+                        if (cateId != null)
+                        {
+                            newCV.CategoryId = cateId.ToString();
+                        }
 
                         db.tblCVdens.Add(newCV);
                         db.SaveChanges();
@@ -185,10 +188,11 @@ namespace QLVBVer2._1
             if (!String.IsNullOrEmpty(lblID.Text))
             {
                 var item = db.tblCVdens.Where(m => m.STT.ToString() == lblID.Text).FirstOrDefault();
+                var cateId = cbCategory.SelectedValue;
                 if (item != null)
                 {
-                    var path = txtAnhscan.Text.Replace(@"T:", "");
-                    var folderPath = @"\\SERVER-NC\doi 1$\DU LIEU SCAN" + path;
+                    var path = txtAnhscan.Text;
+                    var folderPath = path;
 
                     item.ngaythang = dpNgaygui.Value;
                     item.socongvan = txtSoCV.Text;
@@ -200,7 +204,10 @@ namespace QLVBVer2._1
                     item.ghichu = txtGhichu.Text;
                     item.anhscan = txtAnhscan.Text;
                     item.Daxuly = cbIsDone.Checked;
-                    item.CategoryId = cbCategory.SelectedValue.ToString();
+                    if (cateId != null)
+                    {
+                        item.CategoryId = cateId.ToString();
+                    }
                     if (cbValidate.Checked)
                         item.ngayhethan = dpValidate.Value;
                     else
@@ -298,7 +305,10 @@ namespace QLVBVer2._1
                                 cbCategory.SelectedIndex = cbCategory.FindStringExact(x.NameCate);
                             }
                             else
-                                cbCategory.SelectedIndex = 0;
+                            {
+                                cbCategory.SelectedIndex = -1;
+                            }
+                                //cbCategory.SelectedIndex = 0;
                         }
                     }
                 }
@@ -319,7 +329,7 @@ namespace QLVBVer2._1
             dpValidate.Value = DateTime.Now.AddDays(3);
             cbValidate.Checked = false;
             txtNguoixuly.Text = string.Empty;
-            cbCategory.SelectedIndex = 0;
+            //cbCategory.SelectedIndex = 0;
         }
         #region [Image Behavior]
         private void btnOpenFolder_Click(object sender, EventArgs e)
