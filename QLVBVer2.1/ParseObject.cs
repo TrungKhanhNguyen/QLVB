@@ -23,5 +23,6 @@ namespace QLVBVer2._1
         public string nguoixuly { get; set; }
 
         public string CategoryId { get; set; }
+        public DateTime? ngaynhap { get; set; }
     }
 }

@@ -59,6 +59,8 @@ namespace QLVBVer2._1
                 if (item.ngayhethan != null)
                     temp.ngayhethan = Convert.ToDateTime(item.ngayhethan).ToString("dd-MM-yyyy");
                 temp.ngaythang = Convert.ToDateTime(item.ngaythang).ToString("dd-MM-yyyy");
+                if (item.ngaynhap != null)
+                    temp.ngaynhap = Convert.ToDateTime(item.ngaynhap).ToString("dd-MM-yyyy");
                 temp.nguoiky = item.nguoiky;
                 temp.noidung = item.noidung;
                 temp.noigui = item.noigui;
@@ -115,7 +117,8 @@ namespace QLVBVer2._1
                     ngayhethan = item.ngayhethan,
                     Daxuly = Convert.ToBoolean(item.Daxuly),
                     nguoixuly = item.nguoixuly,
-                    CategoryId = item.CategoryId
+                    CategoryId = item.CategoryId,
+                    ngaynhap = item.ngaynhap
                 };
                 listTempObject.Add(tempObject);
                 count++;

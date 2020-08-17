@@ -20,5 +20,6 @@ namespace QLVBVer2._1
         public string ngayhethan { get; set; }
         public bool Daxuly { get; set; }
         public string nguoixuly { get; set; }
+        public string ngaynhap { get; set; }
     }
 }

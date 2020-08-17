@@ -28,5 +28,6 @@ namespace QLVBVer2._1
         public Nullable<bool> Daxuly { get; set; }
         public string nguoixuly { get; set; }
         public string CategoryId { get; set; }
+        public Nullable<System.DateTime> ngaynhap { get; set; }
     }
 }

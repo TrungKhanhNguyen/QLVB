@@ -31,10 +31,11 @@ namespace QLVBVer2._1
         private void btnCVDen_Click(object sender, EventArgs e)
         {
             this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            Congvanden cvDen = new Congvanden();
+            Congvanden cvDen = new Congvanden(this);
             cvDen.Show();
             Thread.Sleep(1500);
             this.Cursor = System.Windows.Forms.Cursors.Default;
+            
         }
 
         private void btnCVDi_Click(object sender, EventArgs e)
@@ -65,6 +66,11 @@ namespace QLVBVer2._1
         {
             ChangePassword newForm = new ChangePassword();
             newForm.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

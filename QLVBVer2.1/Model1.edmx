@@ -46,6 +46,7 @@ warning 6013: The table/view 'QLVB.dbo.NhanVien' does not have a primary key def
           <Property Name="Daxuly" Type="bit" />
           <Property Name="nguoixuly" Type="nvarchar" MaxLength="50" />
           <Property Name="CategoryId" Type="nvarchar" MaxLength="50" />
+          <Property Name="ngaynhap" Type="datetime" />
         </EntityType>
         <EntityType Name="tblCVdi">
           <Key>
@@ -105,6 +106,7 @@ warning 6013: The table/view 'QLVB.dbo.NhanVien' does not have a primary key def
           <Property Name="Daxuly" Type="Boolean" />
           <Property Name="nguoixuly" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="CategoryId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ngaynhap" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="tblCVdi">
           <Key>
@@ -165,6 +167,7 @@ warning 6013: The table/view 'QLVB.dbo.NhanVien' does not have a primary key def
                 <ScalarProperty Name="Daxuly" ColumnName="Daxuly" />
                 <ScalarProperty Name="nguoixuly" ColumnName="nguoixuly" />
                 <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="ngaynhap" ColumnName="ngaynhap" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

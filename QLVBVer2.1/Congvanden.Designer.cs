@@ -33,8 +33,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dpNgaynhap = new System.Windows.Forms.DateTimePicker();
+            this.label18 = new System.Windows.Forms.Label();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txtNguoixuly = new System.Windows.Forms.TextBox();
@@ -77,21 +80,6 @@
             this.txtSearchContent = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoCV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ngaythang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Noidung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Noigui = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NguoikyCV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ykienchidao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ngaychidao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ghichu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nguoixuly = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ngayhethan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Daxuly = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Anh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrev = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
@@ -108,6 +96,22 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoCV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngaynhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngaythang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Noidung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Noigui = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NguoikyCV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ykienchidao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngaychidao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ghichu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nguoixuly = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngayhethan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Daxuly = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Anh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -120,7 +124,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(63, 19);
+            this.label1.Location = new System.Drawing.Point(67, 22);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 16);
@@ -132,6 +136,8 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBox1.Controls.Add(this.dpNgaynhap);
+            this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.cbCategory);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.txtNguoixuly);
@@ -168,11 +174,33 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
             // 
+            // dpNgaynhap
+            // 
+            this.dpNgaynhap.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dpNgaynhap.CustomFormat = "dd-MM-yyyy";
+            this.dpNgaynhap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dpNgaynhap.Location = new System.Drawing.Point(852, 19);
+            this.dpNgaynhap.Name = "dpNgaynhap";
+            this.dpNgaynhap.Size = new System.Drawing.Size(107, 22);
+            this.dpNgaynhap.TabIndex = 33;
+            // 
+            // label18
+            // 
+            this.label18.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(762, 22);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(83, 16);
+            this.label18.TabIndex = 32;
+            this.label18.Text = "Ngày nhập";
+            // 
             // cbCategory
             // 
             this.cbCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(164, 244);
+            this.cbCategory.Location = new System.Drawing.Point(168, 247);
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(127, 24);
             this.cbCategory.TabIndex = 6;
@@ -182,7 +210,7 @@
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(81, 244);
+            this.label16.Location = new System.Drawing.Point(85, 247);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(76, 16);
@@ -192,7 +220,7 @@
             // txtNguoixuly
             // 
             this.txtNguoixuly.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNguoixuly.Location = new System.Drawing.Point(390, 244);
+            this.txtNguoixuly.Location = new System.Drawing.Point(394, 247);
             this.txtNguoixuly.Name = "txtNguoixuly";
             this.txtNguoixuly.Size = new System.Drawing.Size(128, 22);
             this.txtNguoixuly.TabIndex = 30;
@@ -202,7 +230,7 @@
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(298, 247);
+            this.label12.Location = new System.Drawing.Point(302, 250);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(84, 16);
@@ -214,7 +242,7 @@
             this.cbIsDone.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbIsDone.AutoSize = true;
             this.cbIsDone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbIsDone.Location = new System.Drawing.Point(816, 246);
+            this.cbIsDone.Location = new System.Drawing.Point(784, 247);
             this.cbIsDone.Name = "cbIsDone";
             this.cbIsDone.Size = new System.Drawing.Size(81, 20);
             this.cbIsDone.TabIndex = 28;
@@ -227,9 +255,9 @@
             this.dpValidate.CustomFormat = "dd-MM-yyyy";
             this.dpValidate.Enabled = false;
             this.dpValidate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dpValidate.Location = new System.Drawing.Point(647, 244);
+            this.dpValidate.Location = new System.Drawing.Point(651, 247);
             this.dpValidate.Name = "dpValidate";
-            this.dpValidate.Size = new System.Drawing.Size(158, 22);
+            this.dpValidate.Size = new System.Drawing.Size(124, 22);
             this.dpValidate.TabIndex = 27;
             // 
             // cbValidate
@@ -237,7 +265,7 @@
             this.cbValidate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbValidate.AutoSize = true;
             this.cbValidate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbValidate.Location = new System.Drawing.Point(523, 246);
+            this.cbValidate.Location = new System.Drawing.Point(527, 249);
             this.cbValidate.Name = "cbValidate";
             this.cbValidate.Size = new System.Drawing.Size(118, 20);
             this.cbValidate.TabIndex = 26;
@@ -249,7 +277,7 @@
             // 
             this.lblID.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(33, 156);
+            this.lblID.Location = new System.Drawing.Point(63, 156);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(0, 16);
             this.lblID.TabIndex = 25;
@@ -259,7 +287,7 @@
             this.btnOpenFolder.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnOpenFolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpenFolder.Image = ((System.Drawing.Image)(resources.GetObject("btnOpenFolder.Image")));
-            this.btnOpenFolder.Location = new System.Drawing.Point(523, 210);
+            this.btnOpenFolder.Location = new System.Drawing.Point(527, 213);
             this.btnOpenFolder.Name = "btnOpenFolder";
             this.btnOpenFolder.Size = new System.Drawing.Size(90, 24);
             this.btnOpenFolder.TabIndex = 24;
@@ -274,7 +302,7 @@
             this.btnOpenFile.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnOpenFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpenFile.Image = global::QLVBVer2._1.Properties.Resources.if_File_104851;
-            this.btnOpenFile.Location = new System.Drawing.Point(619, 210);
+            this.btnOpenFile.Location = new System.Drawing.Point(623, 213);
             this.btnOpenFile.Name = "btnOpenFile";
             this.btnOpenFile.Size = new System.Drawing.Size(90, 24);
             this.btnOpenFile.TabIndex = 23;
@@ -288,7 +316,7 @@
             // 
             this.btnSeeImage.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSeeImage.Image = global::QLVBVer2._1.Properties.Resources.if_image_add_103590;
-            this.btnSeeImage.Location = new System.Drawing.Point(715, 210);
+            this.btnSeeImage.Location = new System.Drawing.Point(719, 213);
             this.btnSeeImage.Name = "btnSeeImage";
             this.btnSeeImage.Size = new System.Drawing.Size(90, 24);
             this.btnSeeImage.TabIndex = 22;
@@ -301,7 +329,7 @@
             // txtAnhscan
             // 
             this.txtAnhscan.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtAnhscan.Location = new System.Drawing.Point(164, 211);
+            this.txtAnhscan.Location = new System.Drawing.Point(168, 214);
             this.txtAnhscan.Name = "txtAnhscan";
             this.txtAnhscan.Size = new System.Drawing.Size(353, 22);
             this.txtAnhscan.TabIndex = 5;
@@ -311,7 +339,7 @@
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(84, 214);
+            this.label9.Location = new System.Drawing.Point(88, 217);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(73, 16);
@@ -321,7 +349,7 @@
             // txtGhichu
             // 
             this.txtGhichu.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtGhichu.Location = new System.Drawing.Point(164, 153);
+            this.txtGhichu.Location = new System.Drawing.Point(168, 156);
             this.txtGhichu.Multiline = true;
             this.txtGhichu.Name = "txtGhichu";
             this.txtGhichu.Size = new System.Drawing.Size(791, 46);
@@ -332,7 +360,7 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(98, 153);
+            this.label8.Location = new System.Drawing.Point(102, 156);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(59, 16);
@@ -344,7 +372,7 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(524, 128);
+            this.label7.Location = new System.Drawing.Point(528, 131);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(88, 16);
@@ -356,15 +384,15 @@
             this.dpNgayykienchidao.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dpNgayykienchidao.CustomFormat = "dd-MM-yyyy";
             this.dpNgayykienchidao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dpNgayykienchidao.Location = new System.Drawing.Point(621, 125);
+            this.dpNgayykienchidao.Location = new System.Drawing.Point(625, 128);
             this.dpNgayykienchidao.Name = "dpNgayykienchidao";
-            this.dpNgayykienchidao.Size = new System.Drawing.Size(129, 22);
+            this.dpNgayykienchidao.Size = new System.Drawing.Size(105, 22);
             this.dpNgayykienchidao.TabIndex = 12;
             // 
             // txtYkienchidao
             // 
             this.txtYkienchidao.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtYkienchidao.Location = new System.Drawing.Point(164, 125);
+            this.txtYkienchidao.Location = new System.Drawing.Point(168, 128);
             this.txtYkienchidao.Name = "txtYkienchidao";
             this.txtYkienchidao.Size = new System.Drawing.Size(353, 22);
             this.txtYkienchidao.TabIndex = 11;
@@ -374,7 +402,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(51, 124);
+            this.label6.Location = new System.Drawing.Point(55, 127);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(106, 16);
@@ -386,7 +414,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(524, 47);
+            this.label5.Location = new System.Drawing.Point(528, 50);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(93, 16);
@@ -396,7 +424,7 @@
             // txtNguoikyCV
             // 
             this.txtNguoikyCV.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNguoikyCV.Location = new System.Drawing.Point(619, 44);
+            this.txtNguoikyCV.Location = new System.Drawing.Point(623, 47);
             this.txtNguoikyCV.Name = "txtNguoikyCV";
             this.txtNguoikyCV.Size = new System.Drawing.Size(336, 22);
             this.txtNguoikyCV.TabIndex = 8;
@@ -404,7 +432,7 @@
             // txtNoiguiCV
             // 
             this.txtNoiguiCV.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNoiguiCV.Location = new System.Drawing.Point(164, 44);
+            this.txtNoiguiCV.Location = new System.Drawing.Point(168, 47);
             this.txtNoiguiCV.Name = "txtNoiguiCV";
             this.txtNoiguiCV.Size = new System.Drawing.Size(353, 22);
             this.txtNoiguiCV.TabIndex = 2;
@@ -414,7 +442,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(33, 44);
+            this.label4.Location = new System.Drawing.Point(37, 47);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(124, 16);
@@ -424,7 +452,7 @@
             // txtNoidung
             // 
             this.txtNoidung.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNoidung.Location = new System.Drawing.Point(164, 72);
+            this.txtNoidung.Location = new System.Drawing.Point(168, 75);
             this.txtNoidung.Multiline = true;
             this.txtNoidung.Name = "txtNoidung";
             this.txtNoidung.Size = new System.Drawing.Size(791, 46);
@@ -435,7 +463,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(83, 75);
+            this.label3.Location = new System.Drawing.Point(87, 78);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 16);
@@ -447,9 +475,9 @@
             this.dpNgaygui.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dpNgaygui.CustomFormat = "dd-MM-yyyy";
             this.dpNgaygui.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dpNgaygui.Location = new System.Drawing.Point(621, 16);
+            this.dpNgaygui.Location = new System.Drawing.Point(623, 19);
             this.dpNgaygui.Name = "dpNgaygui";
-            this.dpNgaygui.Size = new System.Drawing.Size(147, 22);
+            this.dpNgaygui.Size = new System.Drawing.Size(107, 22);
             this.dpNgaygui.TabIndex = 1;
             // 
             // label2
@@ -457,7 +485,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(524, 21);
+            this.label2.Location = new System.Drawing.Point(528, 24);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 16);
@@ -467,7 +495,7 @@
             // txtSoCV
             // 
             this.txtSoCV.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtSoCV.Location = new System.Drawing.Point(164, 16);
+            this.txtSoCV.Location = new System.Drawing.Point(168, 19);
             this.txtSoCV.Name = "txtSoCV";
             this.txtSoCV.Size = new System.Drawing.Size(353, 22);
             this.txtSoCV.TabIndex = 0;
@@ -499,6 +527,8 @@
             // 
             this.chkExact.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chkExact.AutoSize = true;
+            this.chkExact.Checked = true;
+            this.chkExact.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkExact.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkExact.Location = new System.Drawing.Point(22, 28);
             this.chkExact.Name = "chkExact";
@@ -637,6 +667,7 @@
             this.STT,
             this.ID,
             this.SoCV,
+            this.Ngaynhap,
             this.Ngaythang,
             this.Noidung,
             this.Cate,
@@ -655,126 +686,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1020, 266);
             this.dataGridView1.TabIndex = 22;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // STT
-            // 
-            this.STT.DataPropertyName = "NewSTT";
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "Id";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // SoCV
-            // 
-            this.SoCV.DataPropertyName = "socongvan";
-            this.SoCV.HeaderText = "Số CV";
-            this.SoCV.Name = "SoCV";
-            this.SoCV.ReadOnly = true;
-            // 
-            // Ngaythang
-            // 
-            this.Ngaythang.DataPropertyName = "Ngaythang";
-            dataGridViewCellStyle1.Format = "dd-MM-yyyy";
-            this.Ngaythang.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Ngaythang.HeaderText = "Ngày gửi";
-            this.Ngaythang.Name = "Ngaythang";
-            this.Ngaythang.ReadOnly = true;
-            // 
-            // Noidung
-            // 
-            this.Noidung.DataPropertyName = "noidung";
-            this.Noidung.HeaderText = "Nội dung";
-            this.Noidung.Name = "Noidung";
-            this.Noidung.ReadOnly = true;
-            // 
-            // Cate
-            // 
-            this.Cate.DataPropertyName = "CategoryId";
-            this.Cate.HeaderText = "Danh mục";
-            this.Cate.Name = "Cate";
-            this.Cate.ReadOnly = true;
-            // 
-            // Noigui
-            // 
-            this.Noigui.DataPropertyName = "noigui";
-            this.Noigui.HeaderText = "Nơi gửi";
-            this.Noigui.Name = "Noigui";
-            this.Noigui.ReadOnly = true;
-            this.Noigui.Visible = false;
-            // 
-            // NguoikyCV
-            // 
-            this.NguoikyCV.DataPropertyName = "nguoiky";
-            this.NguoikyCV.HeaderText = "Người ký CV";
-            this.NguoikyCV.Name = "NguoikyCV";
-            this.NguoikyCV.ReadOnly = true;
-            this.NguoikyCV.Visible = false;
-            // 
-            // Ykienchidao
-            // 
-            this.Ykienchidao.DataPropertyName = "ykienchidao";
-            this.Ykienchidao.HeaderText = "YKCĐ";
-            this.Ykienchidao.Name = "Ykienchidao";
-            this.Ykienchidao.ReadOnly = true;
-            this.Ykienchidao.Visible = false;
-            // 
-            // Ngaychidao
-            // 
-            this.Ngaychidao.DataPropertyName = "ngaychidao";
-            dataGridViewCellStyle2.Format = "dd-MM-yyyy";
-            this.Ngaychidao.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Ngaychidao.HeaderText = "Ngày YKCĐ";
-            this.Ngaychidao.Name = "Ngaychidao";
-            this.Ngaychidao.ReadOnly = true;
-            this.Ngaychidao.Visible = false;
-            // 
-            // Ghichu
-            // 
-            this.Ghichu.DataPropertyName = "ghichu";
-            this.Ghichu.HeaderText = "Ghi chú";
-            this.Ghichu.Name = "Ghichu";
-            this.Ghichu.ReadOnly = true;
-            // 
-            // nguoixuly
-            // 
-            this.nguoixuly.DataPropertyName = "nguoixuly";
-            this.nguoixuly.HeaderText = "NgươiXL";
-            this.nguoixuly.Name = "nguoixuly";
-            this.nguoixuly.ReadOnly = true;
-            this.nguoixuly.Visible = false;
-            // 
-            // Ngayhethan
-            // 
-            this.Ngayhethan.DataPropertyName = "ngayhethan";
-            dataGridViewCellStyle3.Format = "dd-MM-yyyy";
-            this.Ngayhethan.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Ngayhethan.HeaderText = "Hết hạn";
-            this.Ngayhethan.Name = "Ngayhethan";
-            this.Ngayhethan.ReadOnly = true;
-            this.Ngayhethan.Visible = false;
-            // 
-            // Daxuly
-            // 
-            this.Daxuly.DataPropertyName = "Daxuly";
-            this.Daxuly.HeaderText = "Đã xử lý";
-            this.Daxuly.Name = "Daxuly";
-            this.Daxuly.ReadOnly = true;
-            this.Daxuly.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Daxuly.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Anh
-            // 
-            this.Anh.DataPropertyName = "anhscan";
-            this.Anh.HeaderText = "Ảnh";
-            this.Anh.Name = "Anh";
-            this.Anh.ReadOnly = true;
             // 
             // btnNext
             // 
@@ -971,6 +882,135 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // STT
+            // 
+            this.STT.DataPropertyName = "NewSTT";
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "Id";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // SoCV
+            // 
+            this.SoCV.DataPropertyName = "socongvan";
+            this.SoCV.HeaderText = "Số CV";
+            this.SoCV.Name = "SoCV";
+            this.SoCV.ReadOnly = true;
+            // 
+            // Ngaynhap
+            // 
+            this.Ngaynhap.DataPropertyName = "ngaynhap";
+            dataGridViewCellStyle1.Format = "dd-MM-yyyy";
+            this.Ngaynhap.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Ngaynhap.HeaderText = "Ngày nhập";
+            this.Ngaynhap.Name = "Ngaynhap";
+            this.Ngaynhap.ReadOnly = true;
+            // 
+            // Ngaythang
+            // 
+            this.Ngaythang.DataPropertyName = "Ngaythang";
+            dataGridViewCellStyle2.Format = "dd-MM-yyyy";
+            this.Ngaythang.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Ngaythang.HeaderText = "Ngày gửi";
+            this.Ngaythang.Name = "Ngaythang";
+            this.Ngaythang.ReadOnly = true;
+            // 
+            // Noidung
+            // 
+            this.Noidung.DataPropertyName = "noidung";
+            this.Noidung.HeaderText = "Nội dung";
+            this.Noidung.Name = "Noidung";
+            this.Noidung.ReadOnly = true;
+            // 
+            // Cate
+            // 
+            this.Cate.DataPropertyName = "CategoryId";
+            this.Cate.HeaderText = "Danh mục";
+            this.Cate.Name = "Cate";
+            this.Cate.ReadOnly = true;
+            // 
+            // Noigui
+            // 
+            this.Noigui.DataPropertyName = "noigui";
+            this.Noigui.HeaderText = "Nơi gửi";
+            this.Noigui.Name = "Noigui";
+            this.Noigui.ReadOnly = true;
+            this.Noigui.Visible = false;
+            // 
+            // NguoikyCV
+            // 
+            this.NguoikyCV.DataPropertyName = "nguoiky";
+            this.NguoikyCV.HeaderText = "Người ký CV";
+            this.NguoikyCV.Name = "NguoikyCV";
+            this.NguoikyCV.ReadOnly = true;
+            this.NguoikyCV.Visible = false;
+            // 
+            // Ykienchidao
+            // 
+            this.Ykienchidao.DataPropertyName = "ykienchidao";
+            this.Ykienchidao.HeaderText = "YKCĐ";
+            this.Ykienchidao.Name = "Ykienchidao";
+            this.Ykienchidao.ReadOnly = true;
+            this.Ykienchidao.Visible = false;
+            // 
+            // Ngaychidao
+            // 
+            this.Ngaychidao.DataPropertyName = "ngaychidao";
+            dataGridViewCellStyle3.Format = "dd-MM-yyyy";
+            this.Ngaychidao.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Ngaychidao.HeaderText = "Ngày YKCĐ";
+            this.Ngaychidao.Name = "Ngaychidao";
+            this.Ngaychidao.ReadOnly = true;
+            this.Ngaychidao.Visible = false;
+            // 
+            // Ghichu
+            // 
+            this.Ghichu.DataPropertyName = "ghichu";
+            this.Ghichu.HeaderText = "Ghi chú";
+            this.Ghichu.Name = "Ghichu";
+            this.Ghichu.ReadOnly = true;
+            // 
+            // nguoixuly
+            // 
+            this.nguoixuly.DataPropertyName = "nguoixuly";
+            this.nguoixuly.HeaderText = "Người xử lý";
+            this.nguoixuly.Name = "nguoixuly";
+            this.nguoixuly.ReadOnly = true;
+            // 
+            // Ngayhethan
+            // 
+            this.Ngayhethan.DataPropertyName = "ngayhethan";
+            dataGridViewCellStyle4.Format = "dd-MM-yyyy";
+            this.Ngayhethan.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Ngayhethan.HeaderText = "Hết hạn";
+            this.Ngayhethan.Name = "Ngayhethan";
+            this.Ngayhethan.ReadOnly = true;
+            this.Ngayhethan.Visible = false;
+            // 
+            // Daxuly
+            // 
+            this.Daxuly.DataPropertyName = "Daxuly";
+            this.Daxuly.HeaderText = "Đã xử lý";
+            this.Daxuly.Name = "Daxuly";
+            this.Daxuly.ReadOnly = true;
+            this.Daxuly.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Daxuly.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Anh
+            // 
+            this.Anh.DataPropertyName = "anhscan";
+            this.Anh.HeaderText = "Ảnh";
+            this.Anh.Name = "Anh";
+            this.Anh.ReadOnly = true;
+            this.Anh.Visible = false;
+            // 
             // Congvanden
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1062,9 +1102,15 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cbCategory;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ComboBox comboSearchCategory;
+        private System.Windows.Forms.CheckBox chkExact;
+        private System.Windows.Forms.DateTimePicker dpNgaynhap;
+        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoCV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ngaynhap;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ngaythang;
         private System.Windows.Forms.DataGridViewTextBoxColumn Noidung;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cate;
@@ -1077,8 +1123,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Ngayhethan;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Daxuly;
         private System.Windows.Forms.DataGridViewTextBoxColumn Anh;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox comboSearchCategory;
-        private System.Windows.Forms.CheckBox chkExact;
     }
 }

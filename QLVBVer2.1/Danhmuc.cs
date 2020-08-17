@@ -66,23 +66,14 @@ namespace QLVBVer2._1
             {
                 if (!String.IsNullOrEmpty(txtCat.Text))
                 {
-
-                    if (db.CategoryVBs.Where(m => m.NameCate == txtCat.Text).FirstOrDefault() != null)
-                    {
-                        MessageBox.Show(this, "Tên danh mục đã tồn tại", "LỖI!");
-                    }
-                    else
-                    {
                         var tempId = Convert.ToInt32(lblId.Text);
                         var item = db.CategoryVBs.Where(m => m.Id == tempId).FirstOrDefault();
-                        item.NameCate = txtCat.Text;
+                        //item.NameCate = txtCat.Text;
                         item.Active = chkActive.Checked;
                         db.CategoryVBs.AddOrUpdate(item);
                         db.SaveChanges();
                         MessageBox.Show(this, "Cập nhật thành công", "Success!");
                         Reload_Data();
-                    }
-
                 }
 
             }
@@ -123,6 +114,8 @@ namespace QLVBVer2._1
         {
             lblId.Text = "";
             txtCat.Text = "";
+            chkActive.Checked = false;
+            dataGridView1.ClearSelection();
         }
 
         private void Danhmuccuatoi_Load(object sender, EventArgs e)

@@ -32,14 +32,16 @@ namespace QLVBVer2._1
         private string ipmain = "";
         private List<CategoryVB> listCate = null;
         private List<CategoryVB> listCateSearch = null;
-        public Congvanden()
+        Form1 fm1;
+        public Congvanden(Form1 fm1)
         {
             InitializeComponent();
             dataGridView1.AutoGenerateColumns = false;
-
+            this.fm1 = fm1;
             isColor = Convert.ToBoolean(System.Configuration.ConfigurationManager.AppSettings["cbFlashColor"]);
             outdate = Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["date"]);
             ipmain = System.Configuration.ConfigurationManager.AppSettings["IPMain"].ToString();
+            
         }
         private void Congvanden_Load(object sender, EventArgs e)
         {
@@ -67,7 +69,7 @@ namespace QLVBVer2._1
             cbSearchByDate.ValueMember = "Value";
             cbSearchByDate.DataSource = items;
 
-            listCate = db.CategoryVBs.ToList();
+            listCate = db.CategoryVBs.Where(m=>m.Active == true).ToList();
 
             cbCategory.DisplayMember = "NameCate";
             cbCategory.ValueMember = "Id";
@@ -89,9 +91,6 @@ namespace QLVBVer2._1
                 = txtNoidung.ShortcutsEnabled = txtNoiguiCV.ShortcutsEnabled
                 = txtYkienchidao.ShortcutsEnabled = true;
             btnNext.Enabled = btnPrev.Enabled = false;
-
-
-
         }
 
         private void ReloadData()
@@ -121,10 +120,12 @@ namespace QLVBVer2._1
             {
                 isHH = true;
                 lblNotify.Text = listHH.Count + " công văn sắp đến hạn";
+                fm1.lblExpiredCount.Text = listHH.Count.ToString();
             }
             else
             {
                 lblNotify.Text = string.Empty;
+                fm1.lblExpiredCount.Text = "0";
                 isHH = false;
             }
         }
@@ -157,6 +158,7 @@ namespace QLVBVer2._1
                             ghichu = txtGhichu.Text,
                             anhscan = folderPath,
                             Daxuly = cbIsDone.Checked,
+                            ngaynhap = dpNgaynhap.Value
                         };
                         if (cbValidate.Checked)
                             newCV.ngayhethan = dpValidate.Value;
@@ -204,10 +206,13 @@ namespace QLVBVer2._1
                     item.ghichu = txtGhichu.Text;
                     item.anhscan = txtAnhscan.Text;
                     item.Daxuly = cbIsDone.Checked;
+                    item.ngaynhap = dpNgaynhap.Value;
+                    
                     if (cateId != null)
                     {
                         item.CategoryId = cateId.ToString();
                     }
+                   
                     if (cbValidate.Checked)
                         item.ngayhethan = dpValidate.Value;
                     else
@@ -279,6 +284,8 @@ namespace QLVBVer2._1
                                 cbValidate.Checked = false;
                             if (temp.ngaythang != null)
                                 dpNgaygui.Value = Convert.ToDateTime(temp.ngaythang);
+                            if (temp.ngaynhap != null)
+                                dpNgaynhap.Value = Convert.ToDateTime(temp.ngaynhap);
                             if (temp.socongvan != null)
                                 txtSoCV.Text = temp.socongvan;
                             if (temp.noigui != null)
@@ -307,6 +314,7 @@ namespace QLVBVer2._1
                             else
                             {
                                 cbCategory.SelectedIndex = -1;
+                                //cbCategory.Enabled = false;
                             }
                                 //cbCategory.SelectedIndex = 0;
                         }
@@ -330,6 +338,8 @@ namespace QLVBVer2._1
             cbValidate.Checked = false;
             txtNguoixuly.Text = string.Empty;
             //cbCategory.SelectedIndex = 0;
+            dpNgaynhap.Value = DateTime.Now;
+            //cbCategory.Enabled = true;
         }
         #region [Image Behavior]
         private void btnOpenFolder_Click(object sender, EventArgs e)
@@ -546,7 +556,11 @@ namespace QLVBVer2._1
 
         private void lblNotify_DoubleClick(object sender, EventArgs e)
         {
-
+            var outdate = Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["date"]);
+            var today = DateTime.Today.Date;
+            var currentDay = DateTime.Today.AddDays(outdate).Date;
+            listCV = db.tblCVdens.Where(m => m.Daxuly == false && m.ngayhethan != null && ((m.ngayhethan >= today && m.ngayhethan.Value <= currentDay) || (m.ngayhethan < today))).ToList();
+            BindToGrid(listCV);
         }
 
 

@@ -35,20 +35,20 @@
             this.txtCat = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameCate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Active = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.chkActive = new System.Windows.Forms.CheckBox();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameCate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Active = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(252, 113);
+            this.btnClear.Location = new System.Drawing.Point(267, 113);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(63, 23);
             this.btnClear.TabIndex = 19;
@@ -66,17 +66,17 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(183, 113);
+            this.btnEdit.Location = new System.Drawing.Point(162, 113);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(63, 23);
+            this.btnEdit.Size = new System.Drawing.Size(99, 23);
             this.btnEdit.TabIndex = 16;
-            this.btnEdit.Text = "Sửa";
+            this.btnEdit.Text = "Cập nhật";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(114, 113);
+            this.btnAdd.Location = new System.Drawing.Point(93, 113);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(63, 23);
             this.btnAdd.TabIndex = 15;
@@ -119,6 +119,30 @@
             this.dataGridView1.Size = new System.Drawing.Size(404, 163);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // NameCate
+            // 
+            this.NameCate.DataPropertyName = "NameCate";
+            this.NameCate.HeaderText = "Tên danh mục";
+            this.NameCate.Name = "NameCate";
+            this.NameCate.ReadOnly = true;
+            // 
+            // Active
+            // 
+            this.Active.DataPropertyName = "Active";
+            this.Active.HeaderText = "Active";
+            this.Active.Name = "Active";
+            this.Active.ReadOnly = true;
+            this.Active.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Active.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // label2
             // 
@@ -166,30 +190,6 @@
             this.chkActive.TabIndex = 23;
             this.chkActive.Text = "Active";
             this.chkActive.UseVisualStyleBackColor = true;
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            // 
-            // NameCate
-            // 
-            this.NameCate.DataPropertyName = "NameCate";
-            this.NameCate.HeaderText = "Tên danh mục";
-            this.NameCate.Name = "NameCate";
-            this.NameCate.ReadOnly = true;
-            // 
-            // Active
-            // 
-            this.Active.DataPropertyName = "Active";
-            this.Active.HeaderText = "Active";
-            this.Active.Name = "Active";
-            this.Active.ReadOnly = true;
-            this.Active.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Active.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Danhmuccuatoi
             // 
